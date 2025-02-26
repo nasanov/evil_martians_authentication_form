@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { signupUser } from './api/auth';
-import './AuthForm.css';
+import { useNavigate } from 'react-router-dom';
+import { loginUser } from '../../api/auth';
+import '../../AuthForm.css';
 
-function Signup() {
-	const [name, setName] = useState('');
+function Login() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [message, setMessage] = useState('');
@@ -16,13 +15,13 @@ function Signup() {
 		setIsLoading(true);
 
 		try {
-			const response = await signupUser(name, email, password);
+			const response = await loginUser(email, password);
 			if (response.success) {
 				localStorage.setItem('user', response.username || '');
-				navigate('/', { state: { message: 'Signup successful!' } });
+				navigate('/', { state: { message: 'Login successful!' } });
 			}
 		} catch {
-			setMessage('Signup failed. Please try again.');
+			setMessage('Login failed. Please try again.');
 		} finally {
 			setIsLoading(false);
 		}
@@ -30,20 +29,10 @@ function Signup() {
 
 	return (
 		<div className="auth-form">
-			<h1>Sign up</h1>
+			<h1>Sign in</h1>
 			<form onSubmit={handleSubmit}>
 				<div>
-					<label hidden>Name:</label>
-					<input
-						type="text"
-						value={name}
-						onChange={e => setName(e.target.value)}
-						required
-						placeholder="Name"
-					/>
-				</div>
-				<div>
-					<label hidden>Email:</label>
+					<label hidden>Email</label>
 					<input
 						type="email"
 						value={email}
@@ -53,7 +42,7 @@ function Signup() {
 					/>
 				</div>
 				<div>
-					<label hidden>Password:</label>
+					<label hidden>Password</label>
 					<input
 						type="password"
 						value={password}
@@ -63,11 +52,14 @@ function Signup() {
 					/>
 				</div>
 				<div className="auth-form-footer">
+					<a href="#" className="forgot">
+						Forgot your password?
+					</a>
 					<button type="submit" disabled={isLoading}>
-						{isLoading ? 'Signing up...' : 'Sign up'}
+						{isLoading ? 'Signing in...' : 'Sign in'}
 					</button>
 					<p>
-						Already have an account? <Link to="/login">Login</Link>
+						Have no account? <a href="/signup">Create new</a>
 					</p>
 				</div>
 			</form>
@@ -76,4 +68,4 @@ function Signup() {
 	);
 }
 
-export default Signup;
+export default Login;
