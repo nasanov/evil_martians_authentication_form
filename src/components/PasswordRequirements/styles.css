@@ -1,0 +1,24 @@
+.password-requirements {
+    margin-top: 24px;
+    font-size: 12px;
+}
+
+.requirement {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    transition: color 0.2s ease;
+}
+
+.requirement.valid {
+    color: #52c41a;
+}
+
+.requirement.invalid {
+    color: #ff4d4f;
+}
+
+.requirement-icon {
+    font-size: 14px;
+}

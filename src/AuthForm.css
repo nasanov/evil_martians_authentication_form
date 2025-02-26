@@ -61,11 +61,18 @@ a:hover {
 }
 
 .error-message {
-	color: #dc3545;
-	margin-top: 10px;
+	color: #ff4d4f;
+	font-size: 0.875rem;
+	margin-top: 4px;
 }
 
 .success-message {
 	color: #28a745;
 	margin-top: 10px;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #cccccc;
 }
