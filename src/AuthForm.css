@@ -51,13 +51,19 @@ input:focus {
 }
 
 a {
+	color: #449eff;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.forgot {
 	color: #333;
 	font-size: 12px;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #449eff;
+	color: #2075cf;
 }
 
 .error-message {
@@ -74,5 +80,5 @@ a:hover {
 button:disabled {
     opacity: 0.6;
     cursor: not-allowed;
-    background-color: #cccccc;
+    background-color: #ccc;
 }
