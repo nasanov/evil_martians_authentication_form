@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../../api/auth';
 import '../../AuthForm.css';
+import { Link } from 'react-router-dom';
 
 function Login() {
 	const [email, setEmail] = useState('');
@@ -59,7 +60,7 @@ function Login() {
 						{isLoading ? 'Signing in...' : 'Sign in'}
 					</button>
 					<p>
-						Have no account? <a href="/signup">Create new</a>
+						Have no account? <Link to="/signup">Create new</Link>
 					</p>
 				</div>
 			</form>
