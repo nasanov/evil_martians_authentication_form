@@ -7,7 +7,6 @@ import App from './App.tsx';
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
 		<HashRouter>
-			{/* // basename={import.meta.env.MODE === 'production' ? '/evil_martians_authentication_form' : '/'} */}
 			<App />
 		</HashRouter>
 	</StrictMode>
