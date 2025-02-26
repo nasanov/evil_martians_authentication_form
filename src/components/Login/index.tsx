@@ -53,7 +53,7 @@ function Login() {
 					/>
 				</div>
 				<div className="auth-form-footer">
-					<a href="#" className="forgot">
+					<a href="/" className="forgot">
 						Forgot your password?
 					</a>
 					<button type="submit" disabled={isLoading}>

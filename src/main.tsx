@@ -1,13 +1,13 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import './index.css';
 import App from './App.tsx';
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
-		<BrowserRouter basename={import.meta.env.MODE === 'production' ? '/evil_martians_authentication_form' : '/'}>
+		<HashRouter basename={import.meta.env.MODE === 'production' ? '/evil_martians_authentication_form' : '/'}>
 			<App />
-		</BrowserRouter>
+		</HashRouter>
 	</StrictMode>
 );
